@@ -128,7 +128,7 @@ while running:
                 bullet1_state = "ready"
             elif bullet1_direction == "right" and bullet1_y >= box2_y -25 and bullet1_y <= box2_y + 25 and bullet1_x >= box2_x and bullet1_x <= box2_x + box_width:
                 bullet1_state = "ready"
-                box2_hit_count += 1
+                box1_hit_count += 1
             
             if bullet1_state == "fire":
                 bullet1_x += fire_bullet1(bullet1_x, bullet1_y, bullet1_direction)
@@ -140,14 +140,18 @@ while running:
         else:
             if bullet2_direction == "left" and bullet2_y >= box1_y - 25 and bullet2_y <= box1_y + 25 and bullet2_x >= box1_x and bullet2_x <= box1_x + box_width:
                 bullet2_state = "ready"
-                box1_hit_count += 1
+                box2_hit_count += 1
             elif bullet2_direction == "right" and bullet2_y >= box2_y and bullet2_y <= box2_y  and bullet2_x >= box2_x and bullet2_x <= box2_x + box_width:
                 bullet2_state = "ready"
-            
+        
             if bullet2_state == "fire":
                 bullet2_x += fire_bullet2(bullet2_x, bullet2_y, bullet2_direction)
     
-
+    #who is winnner
+    # Check if box1_hit_count reaches 50
+    if box1_hit_count >= 50 or box2_hit_count >= 50:
+        break
+    
     # Clear the screen
     screen.fill((0, 0, 0))
     
@@ -170,6 +174,17 @@ while running:
     # Update the display
     pygame.display.flip()
 
+
 # Quit the game
 pygame.quit()
 
+
+# Open the "winner.html" file
+import webbrowser
+file_path1 = "player1redwin.html"
+file_path2 = "player2greenwin.html"
+if box1_hit_count >= 50:
+ webbrowser.open(file_path1)
+elif box2_hit_count >= 50:
+ webbrowser.open(file_path2)
+  
