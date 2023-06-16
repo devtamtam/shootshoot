@@ -10,12 +10,12 @@ pygame.display.set_caption("Shooting Game")
 
 # Box attributes
 box_width, box_height = 50, 50
-box1_x = screen_width // 4 - box_width // 2
-box1_y = screen_height // 2 - box_height // 2
+box1_x = 400
+box1_y = 400
 box1_speed = 5
 
-box2_x = screen_width * 3 // 4 - box_width // 2
-box2_y = screen_height // 2 - box_height // 2
+box2_x = 800
+box2_y = 200
 box2_speed = 5
 
 # Bullet attributes
@@ -124,7 +124,7 @@ while running:
         if bullet2_x > screen_width or bullet2_x < 0:
             bullet2_state = "ready"
         else:
-            if bullet2_direction == "left" and bullet2_y >= box1_y and bullet2_y <= box1_y + box_height and bullet2_x >= box1_x and bullet2_x <= box1_x + box_width:
+            if bullet2_direction == "left" and bullet2_y >= box1_y - 25 and bullet2_y <= box1_y + 25 and bullet2_x >= box1_x and bullet2_x <= box1_x + box_width:
                 bullet2_state = "ready"
             elif bullet2_direction == "right" and bullet2_y >= box2_y and bullet2_y <= box2_y + box_height and bullet2_x >= box2_x and bullet2_x <= box2_x + box_width:
                 bullet2_state = "ready"
