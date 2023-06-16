@@ -179,12 +179,13 @@ while running:
 pygame.quit()
 
 
-# Open the "winner.html" file
-import webbrowser
-file_path1 = "player1redwin.html"
-file_path2 = "player2greenwin.html"
+import easygui  #need to install easy gui by "pip install easygui"
+
 if box1_hit_count >= 50:
- webbrowser.open(file_path1)
+    winner_message = "Player 1 (Box 1) wins!"
 elif box2_hit_count >= 50:
- webbrowser.open(file_path2)
+    winner_message = "Player 2 (Box 2) wins!"
+
+easygui.msgbox(winner_message, title="Game Over")
+  
   
