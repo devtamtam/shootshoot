@@ -113,7 +113,7 @@ while running:
         else:
             if bullet1_direction == "left" and bullet1_y >= box1_y and bullet1_y <= box1_y + box_height and bullet1_x >= box1_x and bullet1_x <= box1_x + box_width:
                 bullet1_state = "ready"
-            elif bullet1_direction == "right" and bullet1_y >= box2_y and bullet1_y <= box2_y + box_height and bullet1_x >= box2_x and bullet1_x <= box2_x + box_width:
+            elif bullet1_direction == "right" and bullet1_y >= box2_y -25 and bullet1_y <= box2_y + 25 and bullet1_x >= box2_x and bullet1_x <= box2_x + box_width:
                 bullet1_state = "ready"
             
             if bullet1_state == "fire":
@@ -126,7 +126,7 @@ while running:
         else:
             if bullet2_direction == "left" and bullet2_y >= box1_y - 25 and bullet2_y <= box1_y + 25 and bullet2_x >= box1_x and bullet2_x <= box1_x + box_width:
                 bullet2_state = "ready"
-            elif bullet2_direction == "right" and bullet2_y >= box2_y and bullet2_y <= box2_y + box_height and bullet2_x >= box2_x and bullet2_x <= box2_x + box_width:
+            elif bullet2_direction == "right" and bullet2_y >= box2_y and bullet2_y <= box2_y  and bullet2_x >= box2_x and bullet2_x <= box2_x + box_width:
                 bullet2_state = "ready"
             
             if bullet2_state == "fire":
